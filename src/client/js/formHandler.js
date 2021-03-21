@@ -26,7 +26,20 @@ const handleSubmit = async () => {
    *      no
    *          show user message it's not valid URL
    */
-  checkURL("https://jamesclear.com/saying-no");
+
+  var url = document.getElementById("article-url").value;
+  var check = checkURL(url);
+  if (check) {
+    post("http://localhost:8081/add-url", { url }).then((res) => {
+      if (res.msg) {
+        alert(res.msg);
+      } else {
+        console.log(res);
+      }
+    });
+  } else {
+    alert("The url is not valid");
+  }
 };
 
 export default handleSubmit;

@@ -1,4 +1,4 @@
-function checkURL(str) {
+function checkURL(input) {
   const url = new RegExp(
     "^(https?:\\/\\/)?" + // protocol
       "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
@@ -9,8 +9,8 @@ function checkURL(str) {
     "i" // fragment locator
   );
 
-  console.log(url);
-  return !!url.test(str);
+  // console.log(!!url.test(input));
+  return !!url.test(input);
 }
 
 export default checkURL;

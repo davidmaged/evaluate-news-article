@@ -31,7 +31,7 @@ app.post("/add-url", async (req, res) => {
       )
       .then(
         (response) => {
-          console.log(response);
+          // console.log(response);
           //   res.send(response.data);
           if (response.data.status.code === "0") {
             let data = response.data;
@@ -46,9 +46,8 @@ app.post("/add-url", async (req, res) => {
             // console.log(output);
             res.status(200).send(output);
           } else {
-            res
-              .status(response.data.status.code)
-              .send(response.data.status.msg);
+            var msg = response.data.status.msg;
+            res.status(response.data.status.code).send({ msg });
           }
         },
         (error) => {
