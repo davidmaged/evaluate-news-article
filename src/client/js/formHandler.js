@@ -17,16 +17,6 @@ const post = async (url = "", data = {}) => {
 };
 
 const handleSubmit = async () => {
-  /**
-   * TODO
-   *  - Get Value of the input for URL
-   *  - Check if it's URL or not
-   *      yes
-   *          send it to the backend
-   *      no
-   *          show user message it's not valid URL
-   */
-
   var url = document.getElementById("article-url").value;
   var check = checkURL(url);
   if (check) {
@@ -35,6 +25,12 @@ const handleSubmit = async () => {
         alert(res.msg);
       } else {
         console.log(res);
+        document.getElementById("text").innerHTML = res.text;
+        document.getElementById("agreement").innerHTML = res.agreement;
+        document.getElementById("subjectivity").innerHTML = res.subjectivity;
+        document.getElementById("confidence").innerHTML = res.confidence;
+        document.getElementById("irony").innerHTML = res.irony;
+        document.getElementById("score_tag").innerHTML = res.score_tag;
       }
     });
   } else {
