@@ -10,8 +10,6 @@ const PORT = 8081;
 
 dotenv.config();
 
-// console.log(`Your API key is ${process.env.API_KEY}`);
-
 const BASE_API_URL = "https://api.meaningcloud.com/sentiment-2.1";
 
 const app = express();

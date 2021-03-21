@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Nunito:400,700");
+
 *,
 *::before,
 *::after {
@@ -11,12 +13,32 @@
   text-rendering: optimizeLegibility;
 }
 
+$base-color: #fed049;
+$primary-font: "Nunito", sans-serif;
+$font-color: #282846;
+$extra-color: #007580;
+
 body {
   display: flex;
   flex-direction: column;
+  // justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #252a32;
+  color: $font-color;
+  font-family: $primary-font;
+  background-color: $base-color;
+}
+
+.container {
+  justify-content: center;
+  border-radius: 10px;
+  border: 2px solid;
+  border-color: $base-color;
+  padding: 20px;
+  // padding-bottom: 400px;
+  margin: 20px;
+  background-color: #d8ebe4;
 }

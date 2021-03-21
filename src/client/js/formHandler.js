@@ -24,7 +24,7 @@ const handleSubmit = async () => {
       if (res.msg) {
         alert(res.msg);
       } else {
-        console.log(res);
+        // console.log(res);
         document.getElementById("text").innerHTML = res.text;
         document.getElementById("agreement").innerHTML = res.agreement;
         document.getElementById("subjectivity").innerHTML = res.subjectivity;
@@ -38,4 +38,4 @@ const handleSubmit = async () => {
   }
 };
 
-export default handleSubmit;
+export default { handleSubmit, post };
